@@ -21,7 +21,7 @@ Example of usage:
 
 > import libgenapi
 
-> lg=libgenapi.Libgenapi(["http://[INSERT MIRROR DOMAIN 1 HERE].com","http://[INSERT MIRROR DOMAIN 2 HERE].com]) # You can add as many mirrors as you want.
+> lg=libgenapi.Libgenapi(["http://libgen.rs"]) # You can add as many mirrors as you want.
 
 > lg.search("python")
 

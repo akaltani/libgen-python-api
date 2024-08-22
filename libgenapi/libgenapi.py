@@ -99,7 +99,7 @@ class Libgenapi(object):
                 parse_result+= [book]
             return parse_result
 
-        def search(self, search_term, column="title", number_results=25 ):
+        def search(self, search_term, column="def", number_results=25 ):
             g = grab.Grab()
             request={"req":search_term,"column":column}
             if sys.version_info[0] < 3:
@@ -423,5 +423,20 @@ class Libgenapi(object):
                     raise MirrorsNotResolvingError("None of the mirrors are resolving, check" + \
                                                    "if they are correct or you have connection!")
     def search(self, search_term, column="title", number_results=25):
-        warnings.warn("Deprecated Method, use Libgenapi().libgen.search() instead.", DeprecationWarning, stacklevel=2)
+        warnings.warn("-- Deprecated Method, use Libgenapi().libgen.search() instead.", DeprecationWarning, stacklevel=2)
         return self.libgen.search(search_term,column,number_results)
+
+# Your existing code...
+
+# Example:
+# At the end of the file, outside of any classes
+if __name__ == "__main__":
+    # Initialize the Libgenapi instance
+    libgenapi_instance = Libgenapi(mirrors=["http://libgen.rs"])
+
+    while True:
+        search_term = input("Enter your search term (or 'exit' to quit): ")
+        if search_term.lower() == 'exit':
+            break
+        results = libgenapi_instance.libgen.search(search_term)
+        print(results)
