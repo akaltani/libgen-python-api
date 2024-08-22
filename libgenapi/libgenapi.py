@@ -99,7 +99,7 @@ class Libgenapi(object):
                 parse_result+= [book]
             return parse_result
 
-        def search(self, search_term, column="title", number_results=25 ):
+        def search(self, search_term, column="def", number_results=25 ):
             g = grab.Grab()
             request={"req":search_term,"column":column}
             if sys.version_info[0] < 3:
