@@ -1,1 +1,1 @@
-python libgenapi/server.py
+web: gunicorn libgenapi.server:app
